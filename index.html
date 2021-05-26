@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><!-- HTML page head --><head>
+    <!-- HTML metadata -->
+    <meta charset="UTF-8">
+    <title>Mango Bites</title>
+    <meta name="description" content="Mango Bites, made by FinMango">
+    <link rel="icon" type="image/ico" href="./static/favicon.ico">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mango Bites">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="./static/favicon.ico">
+
+    <!-- Capabilities-related metadata -->
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- MomentJS -->
+    <script type="text/javascript" src="./third_party/moment/min/moment.min.js"></script>
+
+    <!-- Custom styles and fonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/goldman-sans">
+    <link rel="stylesheet" href="./third_party/picnic/picnic.min.css">
+    <link rel="stylesheet" href="./static/styles.min.css">
+    <link rel="stylesheet" href="./components/stylesurvey.css">
+
+    <!-- Polyfills, custom functions and constants -->
+    <script type="text/javascript" src="./static/cache.min.js"></script>
+    <script type="text/javascript" src="./static/formatter.min.js"></script>
+    <script type="text/javascript" src="./static/component-helper.min.js"></script>
+    <script type="text/javascript" src="./static/polyfills.min.js"></script>
+    <script type="text/javascript">const DEFAULT_OPTIONS={};CURRENT_OPTIONS=Object.keys(DEFAULT_OPTIONS).reduce((t,e)=>Object.assign(t,{[e]:sessionStorage.getItem(e)||DEFAULT_OPTIONS[e]}),{}),GOOGLE_CHARTS_CONFIG=window.GOOGLE_CHARTS_CONFIG||{theme:"material",fontName:"Goldman Sans",colors:["{{theme-primary}}"],legend:{position:CURRENT_OPTIONS.chart_legend_position||"none"},chartArea:{width:"100%",height:"100%",left:parseInt(CURRENT_OPTIONS.chart_padding_left||64),bottom:parseInt(CURRENT_OPTIONS.chart_padding_bottom||48),top:parseInt(CURRENT_OPTIONS.chart_padding_top||24)},titlePosition:"in",axisTitlesPosition:"in",hAxis:{textPosition:"bottom",textStyle:{fontName:"Goldman Sans"}},vAxis:{textPosition:"out",viewWindow:{min:0},textStyle:{fontName:"Goldman Sans"}},height:parseInt(CURRENT_OPTIONS.chart_height||300)};</script>
+
+
+
+</head><body>
+    <!-- Page header -->
+    <header class="flex center one">
+    <div>
+        <a class="centered uppercase" target="_blank" href="https://finmango.org" style="display: block; padding: 0;">
+            <img class="centered" src="./static/logo.png" height="128" width="auto">
+        </a>
+    </div>
+</header>
+
+    <main class="single-column-wide" style="margin-top: auto; margin-bottom: auto;">
+
+        <div id="mango-bites-survey">
+    <style>.animated{transition:all .5s ease-in-out}.screen{height:0;opacity:0;overflow:hidden;max-width:600px;display:block;margin-left:auto;margin-right:auto}.screen-visible{height:auto;opacity:1;overflow:initial}.mangos{position:relative}</style>
+
+    <div class="screen animated" id="mangox-rothira-screen-1">
+        <h2 class="centered" style="text-transform: none; font-size: large;">
+            Click to take a mango bite!
+        </h2>
+    </div>
+
+    <div class="mangos">
+        <img src="./static/mango_bite.svg" id="mango-bite" alt="mango bite svg" height="100" width="110" class="centered">
+        <img src="./static/mango.svg" id="mango" alt="mango svg" height="100" width="110" class="centered">
+    </div>
+
+
+    <script async>!async function(){const e=document.currentScript.parentElement;[].slice.call(e.querySelectorAll("div.screen"),0,-1);e.querySelector("div.screen:first-of-type").classList.add("screen-visible"),e.querySelector("#mango").addEventListener("click",e=>{document.getElementById("mango").style.display="none",document.getElementById("mango-bite").style.display="block",console.log("hi mango")}),e.querySelector("#mango-bite").addEventListener("click",e=>{document.getElementById("mango").style.display="block",document.getElementById("mango-bite").style.display="none",console.log("hi mango bite")})}();</script>
+    
+</div>
+
+        <!-- Add some whitespace to the bottom -->
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+    </main>
+
+    <!-- Load analytics at the end of the page -->
+    <!-- <script src="components/analytics.tpl.html" data-include data-vars='{"root": "."}'></script> -->
+
+
+</body></html>
