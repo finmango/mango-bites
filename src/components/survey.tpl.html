@@ -1,0 +1,75 @@
+<div id="mango-bites-survey">
+    <style>
+    .animated {
+        transition: all 500ms ease-in-out;
+    }
+
+    .screen {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        max-width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .screen-visible {
+        height: auto;
+        opacity: 1;
+        overflow: initial;
+    }
+    .mangos{
+        position: relative;
+    }
+    </style>
+
+    <div class="screen animated" id="mangox-rothira-screen-1">
+        <h2 class="centered" style="text-transform: none; font-size: large;">
+            Click to take a mango bite!
+        </h2>
+    </div>
+
+    <div class="mangos">
+        <img
+        src="{{root}}/static/mango_bite.svg"
+        id = "mango-bite"
+        alt="mango bite svg"
+        height="100"
+        width="110"
+        class= "centered" />
+        <img
+            src="{{root}}/static/mango.svg"
+            id = "mango"
+            alt="mango svg"
+            height="100"
+            width="110"
+            class= "centered" />
+    </div>
+
+
+    <script async>
+        (async function () {
+            const rootElement = document.currentScript.parentElement;
+            let screenIdx = 0;
+            const screens = [].slice.call(rootElement.querySelectorAll('div.screen'), 0, -1);
+            rootElement.querySelector('div.screen:first-of-type').classList.add('screen-visible'); 
+
+            // MANIPULATE MANGO ON CLICK
+            rootElement.querySelector('#mango').addEventListener('click', event => {
+                document.getElementById('mango').style.display = "none"; 
+                document.getElementById('mango-bite').style.display = "block"; 
+                console.log('hi mango');
+                });
+
+            rootElement.querySelector('#mango-bite').addEventListener('click', event => {
+                document.getElementById('mango').style.display = "block"; 
+                document.getElementById('mango-bite').style.display = "none"; 
+                console.log('hi mango bite');
+                });
+
+     
+        })();
+    </script>
+    
+</div>

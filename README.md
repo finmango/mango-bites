@@ -1,4 +1,4 @@
-# MANGO X IRA BATTLE CALCULATOR
+# MANGO X MANGO BITES
 MANGO BITES, by FinMango. Will be @ https://finmango.github.io/mango-bites
 
 ### Building the website
