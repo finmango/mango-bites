@@ -102,8 +102,9 @@ gulp.task('build:ts', function () {
         .pipe(gulp.dest('dist'));
 });
 
+// MAYBE NEED 
 gulp.task('build:all', gulp.series('build:deps', 'build:css', 'build:html', 'build:ts'));
-
+//gulp.task('build:all', gulp.series('build:css', 'build:html', 'build:ts'));
 
 // Copy tasks
 

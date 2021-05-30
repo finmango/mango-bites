@@ -32,19 +32,21 @@
 
     <div class="mangos">
         <img
-        src="{{root}}/static/mango_bite.svg"
-        id = "mango-bite"
-        alt="mango bite svg"
-        height="100"
-        width="110"
-        class= "centered" />
+            src="{{root}}/static/mango_bite.svg"
+            id = "mango-bite"
+            alt="mango bite svg"
+            height="100"
+            width="110"
+            class= "centered"
+            style="width: 50%; display: none" />
         <img
             src="{{root}}/static/mango.svg"
             id = "mango"
             alt="mango svg"
             height="100"
             width="110"
-            class= "centered" />
+            class= "centered" 
+            style="width: 50%; display: block"/>
     </div>
 
 
@@ -55,11 +57,10 @@
             const screens = [].slice.call(rootElement.querySelectorAll('div.screen'), 0, -1);
             rootElement.querySelector('div.screen:first-of-type').classList.add('screen-visible'); 
 
-            // MANIPULATE MANGO ON CLICK
+            // MAKE MANGO TAKE A BITE THEN GO BACK ON CLICK 
             rootElement.querySelector('#mango').addEventListener('click', event => {
                 document.getElementById('mango').style.display = "none"; 
                 document.getElementById('mango-bite').style.display = "block"; 
-                console.log('hi mango');
                 });
 
             rootElement.querySelector('#mango-bite').addEventListener('click', event => {
@@ -68,7 +69,6 @@
                 console.log('hi mango bite');
                 });
 
-     
         })();
     </script>
     
