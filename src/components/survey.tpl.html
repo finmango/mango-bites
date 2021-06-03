@@ -88,14 +88,15 @@
 
 
                 // GET RANDOM MANGO BITE FUN FACT FROM DATA.JSON  
-                fetch('{{root}}/static/data.json')
+                fetch('{{root}}/static/data3.json')
                 .then(response => {
                 return response.json();
                 })
-                .then(data => {
-                    const randomFact = data[Math.floor(Math.random() * data.length)];
+                .then(data3 => {
+                    console.log(data3);
+                    const randomFact = data3[Math.floor(Math.random() * data3.length)];
                     console.log(randomFact['fact']);
-                    rootElement.querySelector('#fun-fact').innerText = ' Did you know that ' + randomFact['fact'] + '?';
+                    rootElement.querySelector('#fun-fact').innerText = ' Did you know that ' + randomFact['fact'];
                 });
 
                 setTimeout(function() {
