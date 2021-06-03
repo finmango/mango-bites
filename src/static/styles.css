@@ -42,7 +42,7 @@ b, h1, h2, h3 {
 .single-column-wide {
     width: 90%;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1500px;
 }
 
 /*********************/
@@ -133,7 +133,16 @@ button.centered {
     box-shadow: none;
 }
 
-.centered {
+.centered{
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.centered-mangos {
     display: block;
     margin-left: 25%;
     margin-right: 25%;

@@ -22,11 +22,29 @@
     .mangos{
         position: relative;
     }
+
+    /*Animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations*/
+    p {
+        animation-duration: 2.75s;
+        animation-name: slidein;
+        animation-iteration-count: 1;
+    }
+    @keyframes slidein {
+        from {
+            margin-left: 100%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
     </style>
 
-    <div class="screen animated" id="mangox-rothira-screen-1">
-        <h2 class="centered" style="text-transform: none; font-size: large;">
-            Click to take a mango bite!
+    <div class="screen animated">
+        <h2 class="centered" style="text-transform: none; font-size: x-large; margin-left: 10px; margin-right: 10px;">
+            Click the mango to take a bite!
         </h2>
     </div>
 
@@ -35,20 +53,26 @@
             src="{{root}}/static/mango_bite.svg"
             id = "mango-bite"
             alt="mango bite svg"
-            height="100"
-            width="110"
+            height="150"
+            width="160"
             class= "centered"
             style="width: 50%; display: none" />
         <img
             src="{{root}}/static/mango.svg"
             id = "mango"
             alt="mango svg"
-            height="100"
-            width="110"
+            height="150"
+            width="160"
             class= "centered" 
             style="width: 50%; display: block"/>
     </div>
 
+    <div class="fun-fact">
+        <h2 class="centered">
+            <p id="fun-fact" style="font-size: large;"> </p>
+            <span id="fun-fact" style="font-size: large;"></span>
+        </h2> 
+    </div>
 
     <script async>
         (async function () {
@@ -61,15 +85,28 @@
             rootElement.querySelector('#mango').addEventListener('click', event => {
                 document.getElementById('mango').style.display = "none"; 
                 document.getElementById('mango-bite').style.display = "block"; 
+
+
+                // GET RANDOM MANGO BITE FUN FACT FROM DATA.JSON  
+                fetch('{{root}}/static/data.json')
+                .then(response => {
+                return response.json();
+                })
+                .then(data => {
+                    const randomFact = data[Math.floor(Math.random() * data.length)];
+                    console.log(randomFact['fact']);
+                    rootElement.querySelector('#fun-fact').innerText = ' Did you know that ' + randomFact['fact'] + '?';
                 });
 
-            rootElement.querySelector('#mango-bite').addEventListener('click', event => {
-                document.getElementById('mango').style.display = "block"; 
-                document.getElementById('mango-bite').style.display = "none"; 
-                console.log('hi mango bite');
+                setTimeout(function() {
+                    document.getElementById('mango').style.display = "block";
+                    document.getElementById('mango-bite').style.display = "none";
+                    console.log('hi mango bite');
+                }, 500);
                 });
 
         })();
+
     </script>
-    
+
 </div>
