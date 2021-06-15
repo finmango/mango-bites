@@ -73,6 +73,12 @@
         </h2> 
     </div>
 
+    <div class="footer">
+        <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 20px; margin-bottom: 20px;">
+            Bite-sized financial fun fact brought to you by Mango X :).
+        </h2>
+    </div>
+
     <script async>!async function(){const t=document.currentScript.parentElement;[].slice.call(t.querySelectorAll("div.screen"),0,-1);t.querySelector("div.screen:first-of-type").classList.add("screen-visible");let n=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"];$("img#mango").click(function(){var e=Math.floor(Math.random()*n.length);rnd_img="./static/mango_bite"+(e+1)+".svg",$("img#mango").attr("src",rnd_img),fetch("./static/data3.json").then(t=>t.json()).then(n=>{console.log(n);const e=n[Math.floor(Math.random()*n.length)];console.log(e.fact),t.querySelector("#fun-fact").innerText=" Did you know that "+e.fact}),setTimeout(function(){$("img#mango").attr("src","./static/mango.svg")},500)})}();</script>
 
 </div>
