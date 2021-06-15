@@ -53,74 +53,10 @@
             src="{{root}}/static/mango.svg"
             id = "mango"
             alt="mango svg"
-            height="170"
-            width="180"
-            class= "centered" 
+            class= "centered-mangos" 
+            height="170px"
+            width="180px"
             style="width: 50%; display: block"/>
-        <img
-            src="{{root}}/static/mango_bite1.svg"
-            id = "mango-bite-1"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite2.svg"
-            id = "mango-bite-2"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite3.svg"
-            id = "mango-bite-3"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite4.svg"
-            id = "mango-bite-4"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite5.svg"
-            id = "mango-bite-5"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite6.svg"
-            id = "mango-bite-6"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite7.svg"
-            id = "mango-bite-7"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
-        <img
-            src="{{root}}/static/mango_bite8.svg"
-            id = "mango-bite-8"
-            alt="mango bite svg"
-            height="170"
-            width="180"
-            class= "centered"
-            style="width: 50%; display: none" />
     </div>
 
     <div class="fun-fact">
@@ -138,15 +74,13 @@
             rootElement.querySelector('div.screen:first-of-type').classList.add('screen-visible'); 
 
             // MAKE MANGO TAKE A RANDOM BITE FROM ALL MANGO SVGS THEN GO BACK ON CLICK 
-
             let arr = ['mango-bite-1','mango-bite-2','mango-bite-3','mango-bite-4','mango-bite-5','mango-bite-6','mango-bite-7','mango-bite-8'];
             
-            rootElement.querySelector('#mango').addEventListener('click', event => {
-                document.getElementById('mango').style.display = "none";
-                console.log('test randomness: ' + arr[Math.floor(Math.random() * arr.length)]);
-                var random_mango = document.getElementById(arr[Math.floor(Math.random() * arr.length)]).style.display = "block";
-                random_mango;  
-                
+            $('img#mango').click(function(){
+                var n = Math.floor(Math.random() * arr.length)
+                rnd_img = './static/mango_bite' + n + '.svg';
+                $('img#mango').attr('src', rnd_img);
+            
                 // GET RANDOM MANGO BITE FUN FACT FROM DATA.JSON  
                 fetch('{{root}}/static/data3.json')
                 .then(response => {
@@ -160,9 +94,7 @@
                 });
 
                 setTimeout(function() {
-                    document.getElementById('mango').style.display = "block";
-                    document.getElementById(random_mango).style.display = "none";
-                    //console.log('hi mango bite');
+                    $('img#mango').attr('src', './static/mango.svg');
                 }, 500);
                 });
 
