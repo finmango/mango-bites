@@ -53,24 +53,31 @@
     <style>.animated{transition:all .5s ease-in-out}.screen{height:0;opacity:0;overflow:hidden;max-width:600px;display:block;margin-left:auto;margin-right:auto}.screen-visible{height:auto;opacity:1;overflow:initial}.mangos{position:relative}p{animation-duration:2.75s;animation-name:slidein;animation-iteration-count:1}@keyframes slidein{from{margin-left:100%;width:300%}to{margin-left:0;width:100%}}</style>
 
     <div class="screen animated">
-        <h2 class="centered" style="text-transform: none; font-size: x-large; margin-left: 10px; margin-right: 10px;">
-            Click the mango to take a bite!
+        <h2 class="centered" style="text-transform: none; font-size: xx-large; margin-left: 10%; margin-right: 10%; margin-top: 20px; margin-bottom: 20px;">
+            Touch the mango to take a bite!
         </h2>
     </div>
 
     <div class="mangos">
-        <img src="./static/mango_bite.svg" id="mango-bite" alt="mango bite svg" height="150" width="160" class="centered" style="width: 50%; display: none">
-        <img src="./static/mango.svg" id="mango" alt="mango svg" height="150" width="160" class="centered" style="width: 50%; display: block">
+        <img src="./static/mango.svg" id="mango" alt="mango svg" height="170" width="180" class="centered" style="width: 50%; display: block">
+        <img src="./static/mango_bite1.svg" id="mango-bite-1" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite2.svg" id="mango-bite-2" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite3.svg" id="mango-bite-3" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite4.svg" id="mango-bite-4" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite5.svg" id="mango-bite-5" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite6.svg" id="mango-bite-6" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite7.svg" id="mango-bite-7" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
+        <img src="./static/mango_bite8.svg" id="mango-bite-8" alt="mango bite svg" height="170" width="180" class="centered" style="width: 50%; display: none">
     </div>
 
     <div class="fun-fact">
         <h2 class="centered">
-            <p id="fun-fact" style="font-size: large;"> </p>
-            <span id="fun-fact" style="font-size: large;"></span>
+            <p id="fun-fact" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="fun-fact" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
         </h2> 
     </div>
 
-    <script async>!async function(){const e=document.currentScript.parentElement;[].slice.call(e.querySelectorAll("div.screen"),0,-1);e.querySelector("div.screen:first-of-type").classList.add("screen-visible"),e.querySelector("#mango").addEventListener("click",t=>{document.getElementById("mango").style.display="none",document.getElementById("mango-bite").style.display="block",fetch("./static/data3.json").then(e=>e.json()).then(t=>{console.log(t);const n=t[Math.floor(Math.random()*t.length)];console.log(n.fact),e.querySelector("#fun-fact").innerText=" Did you know that "+n.fact}),setTimeout(function(){document.getElementById("mango").style.display="block",document.getElementById("mango-bite").style.display="none"},500)})}();</script>
+    <script async>!async function(){const e=document.currentScript.parentElement;[].slice.call(e.querySelectorAll("div.screen"),0,-1);e.querySelector("div.screen:first-of-type").classList.add("screen-visible");let t=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"];e.querySelector("#mango").addEventListener("click",n=>{document.getElementById("mango").style.display="none",console.log("test randomness: "+t[Math.floor(Math.random()*t.length)]);var o=document.getElementById(t[Math.floor(Math.random()*t.length)]).style.display="block";fetch("./static/data3.json").then(e=>e.json()).then(t=>{console.log(t);const n=t[Math.floor(Math.random()*t.length)];console.log(n.fact),e.querySelector("#fun-fact").innerText=" Did you know that "+n.fact}),setTimeout(function(){document.getElementById("mango").style.display="block",document.getElementById(o).style.display="none"},500)})}();</script>
 
 </div>
 
