@@ -135,10 +135,10 @@ button.centered {
 
 .centered{
     display: block;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -146,8 +146,6 @@ button.centered {
     display: block;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 5%;
-    margin-bottom: 5%;
     text-align: center;
 }
 
