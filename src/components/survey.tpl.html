@@ -96,7 +96,7 @@
                     console.log(data3);
                     const randomFact = data3[Math.floor(Math.random() * data3.length)];
                     console.log(randomFact['fact']);
-                    rootElement.querySelector('#fun-fact').innerText = ' Did you know that ' + randomFact['fact'];
+                    rootElement.querySelector('#fun-fact').innerText = randomFact['fact'];
                 });
 
                 setTimeout(function() {
