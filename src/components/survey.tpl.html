@@ -68,7 +68,7 @@
 
     <div class="footer">
         <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 10px;">
-            Bite-sized financial fun fact brought to you by Mango X :).
+            Bite-sized fun fact about investing brought to you by <a href="https://x.finmango.org/" target="_blank">Mango X</a>!
         </h2>
     </div>
 
@@ -88,15 +88,15 @@
                 $('img#mango').attr('src', rnd_img);
             
                 // GET RANDOM MANGO BITE FUN FACT FROM DATA.JSON  
-                fetch('{{root}}/static/data3.json')
+                fetch('{{root}}/static/data5.json')
                 .then(response => {
                 return response.json();
                 })
-                .then(data3 => {
-                    console.log(data3);
-                    const randomFact = data3[Math.floor(Math.random() * data3.length)];
-                    console.log(randomFact['fact']);
-                    rootElement.querySelector('#fun-fact').innerText = randomFact['fact'];
+                .then(data5 => {
+                    console.log(data5);
+                    const randomFact = data5[Math.floor(Math.random() * data5.length)];
+                    console.log(randomFact['fun-fact']);
+                    rootElement.querySelector('#fun-fact').innerText = randomFact['fun-fact'] + " Learn more about " + randomFact['learn-more'];
                 });
 
                 setTimeout(function() {
