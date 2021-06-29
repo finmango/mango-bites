@@ -70,6 +70,12 @@
             <span id="fun-fact" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
         </h2> 
     </div>
+    <div class="learn-more">
+        <h2 class="centered">
+            <p id="learn-more" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="learn-more" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
 
     <div class="footer">
         <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 10px;">
@@ -77,7 +83,7 @@
         </h2>
     </div>
 
-    <script async>!async function(){const t=document.currentScript.parentElement;[].slice.call(t.querySelectorAll("div.screen"),0,-1);t.querySelector("div.screen:first-of-type").classList.add("screen-visible");let e=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"];$("img#mango").click(function(){var n=Math.floor(Math.random()*e.length);rnd_img="./static/mango_bite"+(n+1)+".svg",$("img#mango").attr("src",rnd_img),fetch("./static/data5.json").then(t=>t.json()).then(e=>{console.log(e);const n=e[Math.floor(Math.random()*e.length)];console.log(n["fun-fact"]),t.querySelector("#fun-fact").innerText=n["fun-fact"]+" Learn more about "+n["learn-more"]}),setTimeout(function(){$("img#mango").attr("src","./static/mango.svg")},500)})}();</script>
+    <script async>!async function(){const e=document.currentScript.parentElement;[].slice.call(e.querySelectorAll("div.screen"),0,-1);e.querySelector("div.screen:first-of-type").classList.add("screen-visible");let t=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"];$("img#mango").click(function(){var n=Math.floor(Math.random()*t.length);rnd_img="./static/mango_bite"+(n+1)+".svg",$("img#mango").attr("src",rnd_img),fetch("./static/data6.json").then(e=>e.json()).then(t=>{console.log(t);const n=t[Math.floor(Math.random()*t.length)];console.log(n["fun-fact"]),console.log(n["learn-more"]),e.querySelector("#fun-fact").innerText=n["fun-fact"],e.querySelector("#learn-more").innerText=" Learn more about "+n["learn-more"]+here}),setTimeout(function(){$("img#mango").attr("src","./static/mango.svg")},500)})}();</script>
 
 </div>
 
