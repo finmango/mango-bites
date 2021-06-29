@@ -65,6 +65,12 @@
             <span id="fun-fact" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
         </h2> 
     </div>
+    <div class="learn-more">
+        <h2 class="centered">
+            <p id="learn-more" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="learn-more" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
 
     <div class="footer">
         <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 10px;">
@@ -88,15 +94,18 @@
                 $('img#mango').attr('src', rnd_img);
             
                 // GET RANDOM MANGO BITE FUN FACT FROM DATA.JSON  
-                fetch('{{root}}/static/data5.json')
+                fetch('{{root}}/static/data6.json')
                 .then(response => {
                 return response.json();
                 })
-                .then(data5 => {
-                    console.log(data5);
-                    const randomFact = data5[Math.floor(Math.random() * data5.length)];
+                .then(data6 => {
+                    console.log(data6);
+                    const randomFact = data6[Math.floor(Math.random() * data6.length)];
                     console.log(randomFact['fun-fact']);
-                    rootElement.querySelector('#fun-fact').innerText = randomFact['fun-fact'] + " Learn more about " + randomFact['learn-more'];
+                    console.log(randomFact['learn-more']);
+                    rootElement.querySelector('#fun-fact').innerText = randomFact['fun-fact'];
+                    rootElement.querySelector('#learn-more').innerText = " Learn more about " + randomFact['learn-more'] + here;
+
                 });
 
                 setTimeout(function() {
