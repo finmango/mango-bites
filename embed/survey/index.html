@@ -45,32 +45,52 @@
     <!-- Main element -->
     <div id="mango-bites-survey">
     <style>.animated{transition:all .5s ease-in-out}.screen{height:0;opacity:0;overflow:hidden;max-width:600px;display:block;margin-left:auto;margin-right:auto}.screen-visible{height:auto;opacity:1;overflow:initial}.mangos{position:relative}p{animation-duration:2.75s;animation-name:slidein;animation-iteration-count:1}@keyframes slidein{from{margin-left:100%;width:300%}to{margin-left:0;width:100%}}</style>
-
     <div class="screen animated">
         <h2 class="centered" style="text-transform: none; font-size: xx-large; margin-left: 10%; margin-right: 10%; margin-top: 20px; margin-bottom: 20px;">
             Touch the mango to take a bite!
         </h2>
     </div>
-
     <div class="mangos">
         <img src="../../static/mango.svg" id="mango" alt="mango svg" class="centered-mangos" height="170px" width="180px" style="width: 100%; display: block;">
     </div>
-
     <div class="fact">
         <h2 class="centered">
             <p id="fact" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
             <span id="fact" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
         </h2> 
     </div>
-
+    <div class="A">
+        <h2 class="centered">
+            <p id="A" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="A" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="B">
+        <h2 class="centered">
+            <p id="B" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="B" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="C">
+        <h2 class="centered">
+            <p id="C" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="C" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="D">
+        <h2 class="centered">
+            <p id="D" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="D" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
     <div class="footer">
         <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 10px;">
-            Bite-sized fun fact about investing brought to you by <a href="https://x.finmango.org/" target="_blank">Mango X</a> :)!
+            Bite-sized fun fact or quiz question about investing brought to you by <a href="https://x.finmango.org/" target="_blank">Mango X</a> :)! 
+            The contents on this site are for informational and entertainment purposes only and does not constitute financial, accounting, or legal advice.
         </h2>
     </div>
 
-    <script async>function loadCsv(){return new Promise(t=>{d3.csv("static/facts.csv").then(function(n){t(n)})})}!async function(){const t=document.currentScript.parentElement;[].slice.call(t.querySelectorAll("div.screen"),0,-1);t.querySelector("div.screen:first-of-type").classList.add("screen-visible");let n=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"],o=await loadCsv();$("img#mango").click(function(){var t=Math.floor(Math.random()*o.length),e=Math.floor(Math.random()*n.length);rnd_img="./static/mango_bite"+(e+1)+".svg",$("img#mango").attr("src",rnd_img);const a=o[t];console.log(a["fun-fact"]),console.log(a.topic),console.log(a["story-link"]),$("#fact").text(a["fun-fact"]+" Learn more about "+a.topic),$("#topic").attr("href",a["story-link"]),setTimeout(function(){$("img#mango").attr("src","./static/mango.svg")},500)})}();</script>
-
+    <script async>function loadCsv(){return new Promise(t=>{d3.csv("static/facts-quiz-test.csv").then(function(n){t(n)})})}!async function(){const t=document.currentScript.parentElement;[].slice.call(t.querySelectorAll("div.screen"),0,-1);t.querySelector("div.screen:first-of-type").classList.add("screen-visible");let n=["mango-bite-1","mango-bite-2","mango-bite-3","mango-bite-4","mango-bite-5","mango-bite-6","mango-bite-7","mango-bite-8"],e=await loadCsv();$("img#mango").click(function(){var t=Math.floor(Math.random()*e.length),i=Math.floor(Math.random()*n.length);rnd_img="./static/mango_bite"+(i+1)+".svg",$("img#mango").attr("src",rnd_img);const o=e[t];console.log(o["mango-bites-version"]),$("#fact").text(o["mango-bites-version"]),$("#A").text("A: "+o.A),$("#B").text("B: "+o.B),$("#C").text("C: "+o.C),$("#D").text("D: "+o.D),setTimeout(function(){$("img#mango").attr("src","./static/mango.svg")},500)}),$("img#mango").click(function(){$("img#mango").addClass("slidein")})}();</script>
 </div>
 
     <!-- Load analytics at the end of the page -->
