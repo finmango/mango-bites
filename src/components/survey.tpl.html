@@ -34,20 +34,18 @@
             margin-left: 100%;
             width: 300%;
         }
-
         to {
             margin-left: 0%;
             width: 100%;
         }
     }
-    </style>
 
+    </style>
     <div class="screen animated">
         <h2 class="centered" style="text-transform: none; font-size: xx-large; margin-left: 10%; margin-right: 10%; margin-top: 20px; margin-bottom: 20px;">
             Touch the mango to take a bite!
         </h2>
     </div>
-
     <div class="mangos">
         <img
             src="{{root}}/static/mango.svg"
@@ -58,25 +56,48 @@
             width="180px"
             style="width: 100%; display: block;"/>
     </div>
-
     <div class="fact">
         <h2 class="centered">
             <p id="fact" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
             <span id="fact" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
         </h2> 
     </div>
-
+    <div class="A">
+        <h2 class="centered">
+            <p id="A" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="A" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="B">
+        <h2 class="centered">
+            <p id="B" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="B" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="C">
+        <h2 class="centered">
+            <p id="C" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="C" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
+    <div class="D">
+        <h2 class="centered">
+            <p id="D" style="font-size: x-large; margin-left: 3%; margin-right: 3%; text-align: left;"> </p>
+            <span id="D" style="font-size: large; margin-left: 3%; margin-right: 3%; text-align: left;"></span>
+        </h2> 
+    </div>
     <div class="footer">
         <h2 class="centered" style="text-transform: none; font-size: medium; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 10px;">
-            Bite-sized fun fact about investing brought to you by <a href="https://x.finmango.org/" target="_blank">Mango X</a> :)!
+            Bite-sized fun fact or quiz question about investing brought to you by <a href="https://x.finmango.org/" target="_blank">Mango X</a> :)! 
+            The contents on this site are for informational and entertainment purposes only and does not constitute financial, accounting, or legal advice.
         </h2>
     </div>
 
     <script async>
-
+        // LOAD MANGO BITES FUN FACTS AS .CSV FILE 
         function loadCsv() {
             return new Promise(resolve => {
-                d3.csv('static/facts.csv').then(function(data) {
+                d3.csv('static/facts-quiz-test.csv').then(function(data) {
                     resolve(data);
                 });
             });
@@ -89,8 +110,8 @@
             rootElement.querySelector('div.screen:first-of-type').classList.add('screen-visible'); 
 
             // MAKE MANGO TAKE A RANDOM BITE FROM ALL MANGO SVGS THEN GO BACK ON CLICK 
+            // GENERATE A RANDOM FUN FACT ON CLICK 
             let arr = ['mango-bite-1','mango-bite-2','mango-bite-3','mango-bite-4','mango-bite-5','mango-bite-6','mango-bite-7','mango-bite-8'];
-
             let facts = await loadCsv(); 
             
             $('img#mango').click(function(){
@@ -99,19 +120,27 @@
                 rnd_img = './static/mango_bite' + (m+1) + '.svg';
                 $('img#mango').attr('src', rnd_img);
             
+                // GET QUESTIONS / FUN FACTS AND DISPLAY ON SCREEN 
                 const randomFact = facts[n];
-                console.log(randomFact['fun-fact']);
-                console.log(randomFact['topic']);
-                console.log(randomFact['story-link']);
-                $('#fact').text(randomFact['fun-fact'] + " Learn more about " + randomFact['topic']) + $('#topic').attr('href', randomFact['story-link']);
+                console.log(randomFact['mango-bites-version']);
+                //$('#fact').text(randomFact['mango-bites-version'] + " Learn more about " + randomFact['topic']) + $('#topic').attr('href', randomFact['story-link']);
+                $('#fact').text(randomFact['mango-bites-version']);
+                $('#A').text("A: " + randomFact['A']);
+                $('#B').text("B: " + randomFact['B']);
+                $('#C').text("C: " + randomFact['C']);
+                $('#D').text("D: " + randomFact['D']);
 
                 setTimeout(function() {
                     $('img#mango').attr('src', './static/mango.svg');
                 }, 500);
                 });
 
+            $('img#mango').click(function(){
+                    $('img#mango').addClass('slidein');
+            });
+
+    
+
         })();
-
     </script>
-
 </div>
